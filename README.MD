@@ -1,6 +1,7 @@
 # PoolNGo: Carpooling Service for Daily Commuters
 
 **PoolNGo addresses the challenges faced by daily commuters by providing a streamlined and efficient carpooling service. It enables users—students and office workers—to easily find affordable rides, communicate with drivers, and book trips based on time, destination, and capacity. By organizing carpooling within apartment complexes,  PoolNGo reduces the hassle of finding rides, saves money, and makes commuting more efficient for everyone.**
+
 ## 🚧 Problem Statement: 
 
 #### 1. Daily commuters, including students and office workers, struggle to find affordable and efficient transportation. 
