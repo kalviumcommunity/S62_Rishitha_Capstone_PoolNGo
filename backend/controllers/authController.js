@@ -7,6 +7,16 @@ const signup = async (req, res) => {
   const { name, email, password, phone, role } = req.body;
   
   try {
+    // Check if the email is already taken by either a user or a driver
+    let existingUser;
+    if (role === 'user') {
+      existingUser = await User.findOne({ email });
+    } else if (role === 'driver') {
+      existingUser = await Driver.findOne({ email });
+    }
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email already registered' });
+    }
     // Hash the password using bcryptjs
     const hashedPassword = await bcrypt.hash(password, 10);
     if (role === 'user') {
