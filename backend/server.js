@@ -1,5 +1,6 @@
 const express = require('express');
 require("dotenv").config()
+const connectDatabase = require("./DB/database");
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const driverRoutes = require('./routes/driverRoutes');
@@ -19,7 +20,10 @@ app.use(driverRoutes);
 app.use(cabSlotRoutes);
 app.use(bookingRoutes);
 
-PORT = process.env.PORT || 5000
+// Connect to the database
+connectDatabase();
+
+const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
