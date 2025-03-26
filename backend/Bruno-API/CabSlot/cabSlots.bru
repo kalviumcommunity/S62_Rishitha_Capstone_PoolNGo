@@ -1,0 +1,27 @@
+meta {
+  name: cabSlots
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/cab-slots/67e3a7e3488e467bf6b64718
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzYTdlMzQ4OGU0NjdiZjZiNjQ3MTgiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzQyOTcyOTQ1LCJleHAiOjE3NDM1Nzc3NDV9.HFO-s7Wz1syR9SJn64nZ5narI4DjSs3Ga1zwr7VsFvk
+}
+
+body:json {
+  {
+    "date": "2025-03-29",
+    "startTime": "08:00 AM",
+    "endTime": "10:00 AM", 
+    "apartment": "Green Towers",
+    "destination": "XY University",
+    "capacity": 5, 
+    "price": 50
+  }
+}

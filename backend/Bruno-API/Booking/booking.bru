@@ -1,0 +1,21 @@
+meta {
+  name: booking
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/bookings/67e3a596488e467bf6b64713
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzYTU5NjQ4OGU0NjdiZjZiNjQ3MTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0Mjk3MjQzNiwiZXhwIjoxNzQzNTc3MjM2fQ.pZ5sGupeQLuIsrtuznaOpy5vhihmE4tBHpyvB2I0IuI
+}
+
+body:json {
+  {
+    "cabSlotId": "67e3acf9488e467bf6b64720"
+  }
+}
