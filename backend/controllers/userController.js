@@ -1,6 +1,7 @@
 const User = require('../models/User');
 
 // GET for user-profile
+//read performed
 const getUserProfile = async (req, res) => {
   try {
     const { id } = req.params; // Get the user ID from the URL parameter
@@ -17,6 +18,7 @@ const getUserProfile = async (req, res) => {
   }
 };
 
+//write performed
 const updateUserProfile = async (req, res) => {
   try {
     const { id } = req.params;

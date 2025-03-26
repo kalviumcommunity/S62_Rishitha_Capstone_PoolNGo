@@ -2,6 +2,7 @@ const CabSlot = require('../models/CabSlot');
 const Driver = require('../models/Driver');
 const moment = require('moment'); 
 
+//write performed
 const createCabSlot = async (req, res) => {
   const { date, startTime, endTime, apartment, destination, capacity, price } = req.body;
 
@@ -56,6 +57,7 @@ const createCabSlot = async (req, res) => {
   }
 };
 
+//read performed
 const getDriverCabSlots = async (req, res) => {
   const driverId = req.params.driverId;
   try {

@@ -1,6 +1,7 @@
 const Driver = require('../models/Driver');
 
 // GET for driver-profile
+//read performed
 const getDriverProfile = async (req, res) => {
   try {
     const { id } = req.params; // Get the driver ID from the URL parameter
@@ -17,6 +18,7 @@ const getDriverProfile = async (req, res) => {
   }
 };
 
+//write performed
 const updateDriverProfile = async (req, res) => {
   try {
     const { id } = req.params;
