@@ -1,0 +1,22 @@
+meta {
+  name: driver-signup
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5000/signup
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Ben",
+    "email": "ben@example.com",
+    "password": "ben123",
+    "phone": "1234567890",
+    "role": "driver"
+  }
+  
+}

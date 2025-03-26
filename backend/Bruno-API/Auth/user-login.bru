@@ -1,0 +1,20 @@
+meta {
+  name: user-login
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5000/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "emily@example.com",
+    "password": "emily123",
+    "role":"user"
+  }
+  
+}
