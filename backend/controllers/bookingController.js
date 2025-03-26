@@ -2,6 +2,7 @@ const Booking = require('../models/Booking');
 const CabSlot = require('../models/CabSlot');
 const User = require('../models/User');
 
+//write performed
 const createBooking = async (req, res) => {
   const { cabSlotId } = req.body;
   const userId = req.params.id;
@@ -57,6 +58,7 @@ const createBooking = async (req, res) => {
   }
 };
 
+//read performed
 const getUserBookings = async (req, res) => {
   const { id } = req.params;
   try {
