@@ -3,6 +3,7 @@ const Driver = require('../models/Driver');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+//post route for signing up
 const signup = async (req, res) => {
   const { name, email, password, phone, role } = req.body;
   
@@ -36,6 +37,7 @@ const signup = async (req, res) => {
   }
 };
 
+//post route for logging in
 const login = async (req, res) => {
   const { email, password, role } = req.body;
 
