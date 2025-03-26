@@ -17,4 +17,19 @@ const getDriverProfile = async (req, res) => {
   }
 };
 
-module.exports = { getDriverProfile };
+const updateDriverProfile = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (req.user.userId !== id) {
+      return res.status(403).json({ message: 'You are not authorized to update this profile' });
+    }
+    // Update the driver profile with the data in the body
+    const driver = await Driver.findByIdAndUpdate(id, req.body, { new: true });
+    if (!driver) return res.status(404).json({ message: 'Driver not found' });
+    res.status(200).json(driver);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { getDriverProfile, updateDriverProfile };
