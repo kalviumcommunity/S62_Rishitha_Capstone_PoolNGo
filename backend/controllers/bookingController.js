@@ -57,5 +57,19 @@ const createBooking = async (req, res) => {
   }
 };
 
+const getUserBookings = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Fetch the user with their bookings populated
+    const user = await User.findById(id).populate('bookings');
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json({ bookings: user.bookings });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
-module.exports = { createBooking };
+
+module.exports = { createBooking, getUserBookings };
