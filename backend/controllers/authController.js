@@ -59,8 +59,14 @@ const login = async (req, res) => {
 
     // Create a JWT token
     const token = jwt.sign({ userId: user._id, role: role }, process.env.SECRET_KEY, { expiresIn: '7d' });
-    res.status(200).json({ token });
-
+    // Set the token in an HTTP-only cookie
+    res.cookie('token', token, {
+      httpOnly: true,    // Cookie is only accessible by the server
+      secure: process.env.NODE_ENV === 'production', // Set to true if you're using https
+      sameSite: 'Strict', // Helps mitigate CSRF attacks
+      maxAge: 7 * 24 * 60 * 60 * 1000 // Cookie expiration time (7 days)
+    });
+    res.status(200).json({ message: 'Login successful' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

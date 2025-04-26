@@ -7,11 +7,13 @@ const driverRoutes = require("./routes/driverRoutes");
 const cabSlotRoutes = require("./routes/cabSlotRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser()); 
 
 // Routes
 app.use(authRoutes);
