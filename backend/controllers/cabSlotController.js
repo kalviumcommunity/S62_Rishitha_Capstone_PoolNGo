@@ -77,5 +77,19 @@ const getDriverCabSlots = async (req, res) => {
   }
 };
 
-module.exports = { createCabSlot, getDriverCabSlots };
+const getAllCabSlots = async (req, res) => {
+  try {
+    // Fetch all cab slots
+    const cabSlots = await CabSlot.find();
+    // If no cab slots are found
+    if (cabSlots.length === 0) {
+      return res.status(404).json({ message: "No cab slots found" });
+    }
+    res.status(200).json(cabSlots);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { createCabSlot, getDriverCabSlots, getAllCabSlots };
 
